@@ -6,19 +6,14 @@
         Console.Write("Введите число: ");
         try
         {
-            number = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine((number > 0 & number < 8) ? "да" : "нет");
-            /* или тоже самое в записи if-else
-                if (number>0 & number<8){
-                    Console.WriteLine("да");    
-                } else {
-                    Console.WriteLine("нет");
-                }
-            */
+            number = int.Parse(Console.ReadLine());
         }
         catch
         {
             Console.WriteLine("введено не число,или что-то пошло не так");
+            return;
         }
+        if (number > 7 || number < 1) { Console.WriteLine("таких чисел дня недели не бывает)))"); return; }
+        Console.WriteLine((number > 5 & number < 8) ? "да" : "нет");
     }
 }

@@ -1,36 +1,39 @@
 ﻿internal class Program
 {
-    private static bool IsInt32(string check)// return True if check is int32 number
+    private static int count10(int x)
     {
-        try
+        int t = 1;
+        while (x > 10)
         {
-            int temp = Convert.ToInt32(check);
-            return true;
+            x = x / 10;
+            t++;
         }
-        catch
-        {
-            return false;
-        }
+        return t;
     }
     private static void Main()
     {
-        Console.Write("Введите число: ");
-        string number = Console.ReadLine();
-        if (IsInt32(number))
+        int number;
+        try
         {
-            if (number.Length > 2)
-            {
-                Console.WriteLine(number[2]);
-            }
-            else
-            {
-                Console.WriteLine("третьей цифры нет");
-            }
+            Console.Write("Введите число: ");
+            number = int.Parse(Console.ReadLine());
         }
-        else
+        catch
         {
-            Console.WriteLine("введено не число");
+            Console.WriteLine("ошибка ввода"); return;
         }
-
+        if (number < 100)
+        {
+            Console.WriteLine("3-й цифры нет");
+            return;
+        }
+        int count = count10(number);
+        while (count > 3)
+        {
+            number /= 10;
+            count--;
+        }
+        number %= 10;
+        Console.WriteLine(number);
     }
 }
