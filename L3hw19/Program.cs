@@ -29,11 +29,10 @@
 
     private static void Main(string[] args)
     {
-        for(int i = 0; i < 3; i++) { 
-        int number; Console.Write("Введите пятизначное число: ");
-        number = int.Parse(Console.ReadLine());
+        foreach (int item in new int[] { 14212, 12821, 23432 })
+        {
+            Console.WriteLine($"{item} -> {checkPolindrom(item)}");
+        }
 
-        Console.WriteLine($"{number} -> {checkPolindrom(number)}");
-    }
     }
 }
