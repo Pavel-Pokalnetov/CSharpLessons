@@ -1,44 +1,25 @@
 ﻿internal class Program
 {
-    class Point
+   static double Input(string prompt)
     {
-        public double x, y, z;
-        char name;
-        public Point(double[] coordinates,char name)
-        {
-            x = coordinates[0];
-            y = coordinates[1];
-            z = coordinates[2];
-            this.name = name;
-        }
-        public string Visual()
-        {
-            return $"{name}({x},{y},{z})";
-        }
+        Console.Write(prompt);
+        return double.Parse(Console.ReadLine());
     }
-
-    static double GetLenAB(Point A, Point B)
+    static double GetLenAB(double x1, double y1, double z1, double x2, double y2, double z2)
     {
-        double length = Math.Sqrt(Math.Pow(B.x - A.x, 2) +
-                                  Math.Pow(B.y - A.y, 2) +
-                                  Math.Pow(B.z - A.z, 2));
-        return length;
+        return Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
     }
-
-
-    private static void Main(string[] args)
+    public static void Main()
     {
-        //исходные данные
-        Point pointA = new Point(new double[] { 3, 6, 8 },'A');
-        Point pointB = new Point(new double[] { 2, 1, -7 },'B');
-        //расчет
-        Console.WriteLine($"{pointA.Visual()};{pointB.Visual()} -> {GetLenAB(pointA, pointB),0:F2}");
-
-        //исходные данные
-        pointA = new Point(new double[] { 7, -5, 0 },'A');
-        pointB = new Point(new double[] { 1, -1, -9 },'B');
-        //расчет
-        Console.WriteLine($"{pointA.Visual()};{pointB.Visual()} -> {GetLenAB(pointA, pointB),0:F2}");
-
+        Console.WriteLine("Точка А");
+        double x1 = Input("x=");
+        double y1 = Input("y=");
+        double z1 = Input("z=");
+        Console.WriteLine("Точка B");
+        double x2 = Input("x=");
+        double y2 = Input("y=");
+        double z2 = Input("z=");
+        Console.Clear();
+        Console.WriteLine($"A({x1},{y1},{z1});B({x2},{y2},{z2}) -> {GetLenAB(x1, y1, z1, x2, y2, z2),0:F2}");
     }
 }
