@@ -21,7 +21,7 @@
         if (num < 10000 || num > 99999)
         {
             Console.WriteLine("число вне диапазона 10000..99999");
-            Environment.Exit(1); //Выход с кодом 1
+            Environment.Exit(1); //Выход с кодом 1 если задано число не из 5-и цифр
         }
         for (int i = 0; i < 5; i++) if (getNumInPos(num, i) != getNumInPos(num, 4 - i)) return "нет";
         return "да";
