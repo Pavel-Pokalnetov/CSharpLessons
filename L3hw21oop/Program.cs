@@ -1,4 +1,5 @@
-﻿internal class Program
+//то же самое, что и L3hw21, только c элементами ООП
+internal class Program
 {
     class Point
     {
