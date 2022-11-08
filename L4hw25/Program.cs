@@ -29,6 +29,8 @@ internal class Program
     {
         Console.WriteLine("Введите 2 числа через запятую");
         string[] numbers = Console.ReadLine().Split(",");
-        Console.WriteLine(Expo(int.Parse(numbers[0]), int.Parse(numbers[1])));
+        int a = int.Parse(numbers[0]); 
+        int b = int.Parse(numbers[1]);
+        Console.WriteLine($"{a},{b} -> {Expo(a, b)}");
     }
 }
