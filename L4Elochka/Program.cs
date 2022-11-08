@@ -1,26 +1,26 @@
 ﻿internal class Program
 {
-    private static void PrintChar(char sumbol,int count,ConsoleColor color) 
+    private static void PrintChar(char symbol, int count, ConsoleColor color)
     {
         for (int i = 0; i < count; i++)
-        {   
-            if (color == ConsoleColor.Green && new Random().Next(0,10)>7)
-            {
-                Console.ForegroundColor = ConsoleColor.Cyan;
-            }
-            else Console.ForegroundColor = color;
-            Console.Write(sumbol);
-            Console.ForegroundColor = ConsoleColor.Black;
+        {
+            if (color == ConsoleColor.DarkGreen && new Random().Next(0, 10) > 8){
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write('х');
+            } else {
+                Console.ForegroundColor = color;
+                Console.Write(symbol);
+            }       
         }
     }
 
-    private static void PrintLine(int line, ConsoleColor color,int height,int offset)
+    private static void PrintLine(int line, ConsoleColor color, int height, int offset)
     {
-        int whitespace = height - 1 - line;;
+        int whitespace = height - 1 - line; ;
         int stars = (line + 1) * 2 - 1;
 
-        PrintChar(' ', offset,color);
-        PrintChar(' ', whitespace, color);
+        PrintChar(' ', offset, ConsoleColor.Black);
+        PrintChar(' ', whitespace, ConsoleColor.Black);
         PrintChar('*', stars, color);
         Console.WriteLine();
         //Console.ResetColor();
@@ -33,19 +33,19 @@
         int heightChristmasTree = int.Parse(Console.ReadLine());
         Console.Clear();
 
-        if (heightChristmasTree > 40){Console.WriteLine("Елка слишком высока"); return;}
-        else if (heightChristmasTree <= 0) { Console.WriteLine("Таких елок не бывает");return;}
+        if (heightChristmasTree > 40) { Console.WriteLine("Елка слишком высока"); return; }
+        else if (heightChristmasTree <= 0) { Console.WriteLine("Таких елок не бывает"); return; }
 
         int widthChristmasTree = heightChristmasTree * 2 - 1;
-        int offset = (Console.WindowWidth - widthChristmasTree)/2;
+        int offset = (Console.WindowWidth - widthChristmasTree) / 2;
         do
         {
-            Console.SetCursorPosition(0,0);
+            Console.SetCursorPosition(0, 0); Console.WriteLine("\n\n\n\n");
 
-            PrintLine(0, ConsoleColor.Red, heightChristmasTree, offset );//звезда-верхушка
+            PrintLine(0, ConsoleColor.Red, heightChristmasTree, offset);//звезда-верхушка
             for (int row = 0; row < heightChristmasTree; row++)
             {
-                PrintLine(row, ConsoleColor.Green, heightChristmasTree, offset);
+                PrintLine(row, ConsoleColor.DarkGreen, heightChristmasTree, offset);
             }
             PrintLine(0, ConsoleColor.DarkGray, heightChristmasTree, offset);//ствол
             PrintLine(0, ConsoleColor.DarkGray, heightChristmasTree, offset);
