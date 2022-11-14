@@ -27,7 +27,7 @@ internal class Program
     {
         Random rnd = new Random();
         double[] array = new double[dim];
-        for (int count = 0; count < dim; count++) { array[count] = min + rnd.NextDouble() * max; }
+        for (int count = 0; count < dim; count++) { array[count] = min + rnd.NextDouble() * (max-min); }
         return array;
     }
 
