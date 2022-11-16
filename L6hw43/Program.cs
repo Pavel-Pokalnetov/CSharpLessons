@@ -60,7 +60,7 @@ double[]? PointsIntersectionOfStraightLines(double[] arg)
 
 double[] parametryStraightLine = InputParam();
 double[] point = PointsIntersectionOfStraightLines(parametryStraightLine);
-if (point == null) return;
+if (point is null) return;
 Console.WriteLine($"Точка пересечения ( {point[0]:F1} , {point[1]:F1} )");
 
 /* вывод консоли
