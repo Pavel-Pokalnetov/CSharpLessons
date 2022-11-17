@@ -7,7 +7,6 @@
     return 0;//если не найден символ греческих цифр возвращаем 0
 }
 
-
 int RomeNumberParse(string romeNumber)
 {
     int result = 0;
@@ -16,7 +15,7 @@ int RomeNumberParse(string romeNumber)
         int currentNumber = RomeToAracbic(romeNumber[i]);
         if (currentNumber == 0)
         {   //выбрасываем исключение если обнаружен неверный символ
-            throw new Exception("Error in the Greek number symbols."); 
+            throw new Exception("Error in the Greek number symbols.");
         }
         if (i + 1 < romeNumber.Length)
         {
@@ -34,7 +33,6 @@ int RomeNumberParse(string romeNumber)
         // обработка последней цифры 
         {
             result += currentNumber;
-
         }
     }
     return result;
