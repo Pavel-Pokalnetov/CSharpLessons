@@ -1,4 +1,11 @@
-﻿int RomeToAracbic(char sumbol)
+﻿/* 
+Задача со звездочкой: Написать программу для перевода римских чисел в десятичные арабские.
+III -> 3
+LVIII -> 58
+MCMXCIV -> 1994
+*/
+
+int RomeToAracbic(char sumbol)
 {   //возвращает арабское число соответствующее входной греческой цифре
     string romeNumeric = "IVXLCDM";
     int[] arabicNumeric = new int[7] { 1, 5, 10, 50, 100, 500, 1000 };
@@ -43,11 +50,11 @@ string[] exampleRome = { "III", "LVIII", "MCMXCIV" };
 foreach (var item in exampleRome)
 {
     int arabicNumber = RomeNumberParse(item);
-    Console.WriteLine($"\"{item}\" = {arabicNumber}");
+    Console.WriteLine($"{item} = {arabicNumber}");
 }
 
 /* вывод консоли
-"III" = 3
-"LVIII" = 58
-"MCMXCIV" = 1994
+III = 3
+LVIII = 58
+MCMXCIV = 1994
 */
