@@ -45,3 +45,9 @@ foreach (var item in exampleRome)
     int arabicNumber = RomeNumberParse(item);
     Console.WriteLine($"\"{item}\" = {arabicNumber}");
 }
+
+/* вывод консоли
+"III" = 3
+"LVIII" = 58
+"MCMXCIV" = 1994
+*/
