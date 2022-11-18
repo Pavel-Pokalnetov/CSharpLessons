@@ -6,12 +6,12 @@ MCMXCIV -> 1994
 */
 
 int RomeToAracbic(char sumbol)
-{   //возвращает арабское число соответствующее входной греческой цифре
+{   //возвращает арабское число соответствующее входной римской цифре
     string romeNumeric = "IVXLCDM";
     int[] arabicNumeric = new int[7] { 1, 5, 10, 50, 100, 500, 1000 };
     int index = romeNumeric.IndexOf(sumbol);
     if (index >= 0) return arabicNumeric[index];
-    return 0;//если не найден символ греческих цифр возвращаем 0
+    return 0;//если не найден символ римских цифр возвращаем 0
 }
 
 int RomeNumberParse(string romeNumber)
@@ -22,7 +22,7 @@ int RomeNumberParse(string romeNumber)
         int currentNumber = RomeToAracbic(romeNumber[i]);
         if (currentNumber == 0)
         {   //выбрасываем исключение если обнаружен неверный символ
-            throw new Exception("Error in the Greek number symbols.");
+            throw new Exception("Invalid character in the Roman notation of the number.");
         }
         if (i + 1 < romeNumber.Length)
         {
