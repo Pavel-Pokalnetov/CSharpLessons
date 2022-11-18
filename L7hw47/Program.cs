@@ -10,15 +10,15 @@ m = 3, n = 4.
 double[,] GetArray(int dimA, int dimB, double minVal, double maxVal)
 {
     Random rnd = new Random();
-    double[,] array = new double[dimA, dimB];
+    double[,] newArray = new double[dimA, dimB];
     for (int i = 0; i < dimA; i++)
     {
         for (int j = 0; j < dimB; j++)
         {
-            array[i, j] = rnd.NextDouble() * (maxVal - minVal) + minVal;
+            newArray[i, j] = rnd.NextDouble() * (maxVal - minVal) + minVal;
         }
     }
-    return array;
+    return newArray;
 }
 
 void PrintDoubleArray(double[,] inArray)
@@ -33,4 +33,17 @@ void PrintDoubleArray(double[,] inArray)
     }
 }
 
-PrintDoubleArray(GetArray(3, 3, 0, 100));
+
+Console.WriteLine("Задайте размерность массива");
+Console.Write("число строк m=");
+int m = int.Parse(Console.ReadLine());
+Console.Write("число колонок n=");
+int n = int.Parse(Console.ReadLine());
+Console.WriteLine("задайте диапазон значений элементов массива (min;max)");
+Console.Write("min=");
+int min = int.Parse(Console.ReadLine());
+Console.Write("max=");
+int max = int.Parse(Console.ReadLine());
+Console.WriteLine();
+double[,] myArray = GetArray(m,n, min,max);
+PrintDoubleArray(myArray);
