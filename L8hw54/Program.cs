@@ -9,6 +9,7 @@
 9 5 3 2
 8 4 4 2
 */
+
 using MyLib;
 /// библиотека с функциями 
 /// int[,] GetArray(int row, int col, int minValue, int maxValue)
