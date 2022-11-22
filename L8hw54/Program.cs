@@ -9,7 +9,12 @@
 9 5 3 2
 8 4 4 2
 */
+using MyLib;
+/// библиотека с функциями 
+/// int[,] GetArray(int row, int col, int minValue, int maxValue)
+/// void PrintArray(int[,] printableArray)
 
+/*
 int[,] GetArray(int row, int col, int minValue, int maxValue)
 {
     int[,] resultArray = new int[row, col];
@@ -22,7 +27,7 @@ int[,] GetArray(int row, int col, int minValue, int maxValue)
         }
     }
     return resultArray;
-}
+}*/
 
 void SortRowArray(int[,] sortedArray)
 {
@@ -48,7 +53,7 @@ void SortRowArray(int[,] sortedArray)
     }
 }
 
-
+/*
 void PrintArray(int[,] printableArray)
 {
     int dimRow = printableArray.GetLength(0);
@@ -62,14 +67,14 @@ void PrintArray(int[,] printableArray)
         Console.WriteLine();
     }
 }
+*/
 
 
-
-int[,] myArray = GetArray(6, 6, 0, 9);
-PrintArray(myArray);
+int[,] myArray = Function.GetArray(6, 6, 0, 9);
+Function.PrintArray(myArray);
 Console.WriteLine("  -----------------------");
 SortRowArray(myArray);
-PrintArray(myArray);
+Function.PrintArray(myArray);
 
 
 /*

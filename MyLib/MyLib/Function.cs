@@ -1,6 +1,6 @@
 ﻿namespace MyLib
 {
-    public static class myClass
+    public static class Function
     {
         public static void PrintArray(int[,] printableArray)
         {
