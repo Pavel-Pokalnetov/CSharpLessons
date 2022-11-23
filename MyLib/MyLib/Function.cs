@@ -8,7 +8,7 @@
             int dimCol = printableArray.GetLength(1);
             for (int i = 0; i < dimRow; i++)
             {
-                for (int j = 1; j < dimCol; j++)
+                for (int j = 0; j < dimCol; j++)
                 {
                     Console.Write($"{printableArray[i, j],4} ");
                 }
