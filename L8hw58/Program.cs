@@ -29,11 +29,8 @@ int[,] MatrixMultiplication(int[,] A, int[,] B)
 
     int rowsC = rowsA;
 
-    int colsC = (colsA > colsB) ? colsB : colsA;
-    bool flag = (colsA > colsB);
-    //эта конструкция нужна чтобы можно было умножать матрицы с разным количеством столбцов
-
-
+    int colsC = colsB;
+   
     int[,] C = new int[rowsC, colsC];
 
     for (int i = 0; i < rowsC; i++)
@@ -43,7 +40,7 @@ int[,] MatrixMultiplication(int[,] A, int[,] B)
             C[i, j] = 0;
             for (int k = 0; k < rowsB; k++)
             {
-                C[i, j] += (flag) ? (A[i, k] * B[k, j]) : A[k, j] * B[i, k];
+                C[i, j] += A[i, k] * B[k, j];
             }
         }
     }

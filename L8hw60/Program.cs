@@ -10,6 +10,7 @@
 int[] GetRndArray(int dim)
 {
     int[] array = new int[dim];
+
     bool Find(int number, int count)
     {
         for (int i = 0; i < count; i++)
@@ -18,6 +19,7 @@ int[] GetRndArray(int dim)
         }
         return false;
     }
+
     Random rnd = new Random();
     for (int i = 0; i < dim; i++)
     {

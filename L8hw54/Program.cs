@@ -71,7 +71,7 @@ void PrintArray(int[,] printableArray)
 */
 
 
-int[,] myArray = Function.GetArray(6, 6, 0, 9);
+int[,] myArray = Function.GetArray(4, 4, 0, 9);
 Function.PrintArray(myArray);
 Console.WriteLine("  -----------------------");
 SortRowArray(myArray);

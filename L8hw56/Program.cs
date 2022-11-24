@@ -11,6 +11,7 @@
  */
 
 using MyLib;
+
 int getSummRow(int[,] array, int row)
 {///возвращает сумму элементов строки #row двумерного массива
     int summ = array[row, 0];
